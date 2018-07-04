@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RowCell = (props) => (
-  <td>{props.name}</td>
+	<td>{props.name}</td>
 );
 
 

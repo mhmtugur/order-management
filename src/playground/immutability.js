@@ -1,10 +1,10 @@
 const obj = {
-  name: 'Mehmet',
-  lastName: 'Ugur',
-  subClass : {
-    subName: 'Ahmet',
-    subLastName: 'TEst'
-  }
+	name: 'Mehmet',
+	lastName: 'Ugur',
+	subClass : {
+		subName: 'Ahmet',
+		subLastName: 'TEst'
+	}
 };
 
 

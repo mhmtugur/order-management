@@ -2,7 +2,7 @@ import React from 'react';
 import RowCell from './RowCell';
 import ButtonCell from './ButtonCell';
 import InputCell from './InputCell';
-import { editOrder } from '../actions/Orders';
+import { editOrder, removeOrder } from '../actions/Orders';
 import { connect } from 'react-redux';
 
 class TableRow extends React.Component {
@@ -23,9 +23,12 @@ class TableRow extends React.Component {
   };
 
   saveOnClick = () => {
-    debugger;
     this.props.dispatch(editOrder(this.state.id,this.state));
     this.setState(() => ({ isEditMode: !this.state.isEditMode }));
+  };
+
+  removeOnClick = () => {
+    this.props.dispatch(removeOrder(this.state.id));
   };
 
   onCustomerNameChange = (e) => {
@@ -43,10 +46,6 @@ class TableRow extends React.Component {
     this.setState(() => ({ amount }));
   };
 
-  handleOnChange = (e) => {
-    //const customerName = e.target.value;
-    console.log(e);
-  };
   renderCells() {
     return (
       <tr>
@@ -57,6 +56,10 @@ class TableRow extends React.Component {
         name="Edit" 
         onClick={this.editOnclick} 
       />
+      <ButtonCell 
+        name="Remove" 
+        onClick={this.removeOnClick} 
+      />
     </tr>
     );
   }
@@ -66,36 +69,25 @@ class TableRow extends React.Component {
         <InputCell 
         placeholder="Customer Name"
         value={this.state.customerName}
-        onChange={this.handleOnChange}
+        onChange={this.onCustomerNameChange}
         />
-        
-        <td>
-          <input 
-            type="text"
-            placeholder="Customer Name"
-            value={this.state.customerName}
-            onChange={this.onCustomerNameChange}
-          />
-        </td>
-        <td>
-          <input 
-            type="text"
-            placeholder="Product Name"
-            value={this.state.productName}
-            onChange={this.onProductNameChange}
-          />
-        </td>
-        <td>
-          <input 
-            type="text"
-            placeholder="Amount"
-            value={this.state.amount}
-            onChange={this.onAmountChange}
-          />
-        </td>
+        <InputCell 
+        placeholder="Product Name"
+        value={this.state.productName}
+        onChange={this.onProductNameChange}
+        />
+        <InputCell 
+        placeholder="Amount"
+        value={this.state.amount}
+        onChange={this.onAmountChange}
+        />
         <ButtonCell 
         name="Save" 
         onClick={this.saveOnClick} 
+        />
+        <ButtonCell 
+        name="Remove" 
+        onClick={this.removeOnClick} 
         />
       </tr>
       );

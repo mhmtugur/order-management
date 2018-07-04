@@ -6,14 +6,14 @@ import DashboardPage from '../components/DashboardPage';
 
 
 const AppRouter = () => (
-  <BrowserRouter>
-    <div>
-    <Header />
-      <Switch>
-        <Route path="/" component={DashboardPage} exact={true} />
-      </Switch>
-    </div>
-  </BrowserRouter>
+	<BrowserRouter>
+		<div>
+			<Header />
+			<Switch>
+				<Route path="/" component={DashboardPage} exact={true} />
+			</Switch>
+		</div>
+	</BrowserRouter>
 );
 
 

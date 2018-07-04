@@ -19,9 +19,9 @@ store.dispatch(addOrder({ customerName: 'Mehmet', productName: 'Phone', amount: 
 store.dispatch(addOrder({ customerName: 'Mustafa', productName: 'Elma', amount: 3 }));
 
 const jsx = (
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>
+	<Provider store={store}>
+		<AppRouter />
+	</Provider>
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));

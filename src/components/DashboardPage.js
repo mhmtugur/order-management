@@ -5,11 +5,10 @@ import Header from './Header';
 
 
 const DashboardPage = () => (
-  <div>
-    <Header />
-    <AddOrder />
-    <OrderList />
-  </div>
+	<div>
+		<AddOrder />
+		<OrderList />
+	</div>
 );
 
 export default DashboardPage;
