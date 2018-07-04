@@ -14,8 +14,8 @@ export const addOrder = ({
   }
 });
 
-export const editOrder = (id, updates) => ({
+export const editOrder = (id, order) => ({
   type: 'EDIT_ORDER',
   id,
-  updates
+  order
 });
